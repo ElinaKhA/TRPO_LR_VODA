@@ -34,8 +34,8 @@
             this.pbcont = new System.Windows.Forms.PictureBox();
             this.pb1tab = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbwordCardError = new System.Windows.Forms.PictureBox();
+            this.pbPayCard = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -57,13 +57,19 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.labelFakeCredit = new System.Windows.Forms.Label();
             this.labelCredit = new System.Windows.Forms.Label();
+            this.pbnaliv = new System.Windows.Forms.Panel();
+            this.buttonNaliv = new System.Windows.Forms.Button();
+            this.pb5done = new System.Windows.Forms.PictureBox();
+            this.gbtakewater = new System.Windows.Forms.Panel();
+            this.pbtakewater = new System.Windows.Forms.PictureBox();
+            this.pbgoodday = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbbut5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcont)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1tab)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbwordCardError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPayCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -73,6 +79,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBoxCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.pbnaliv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb5done)).BeginInit();
+            this.gbtakewater.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtakewater)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbgoodday)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -129,25 +140,27 @@
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox4
+            // pbwordCardError
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(435, 178);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(70, 47);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 7;
-            this.pictureBox4.TabStop = false;
+            this.pbwordCardError.Image = ((System.Drawing.Image)(resources.GetObject("pbwordCardError.Image")));
+            this.pbwordCardError.Location = new System.Drawing.Point(435, 178);
+            this.pbwordCardError.Name = "pbwordCardError";
+            this.pbwordCardError.Size = new System.Drawing.Size(70, 47);
+            this.pbwordCardError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbwordCardError.TabIndex = 7;
+            this.pbwordCardError.TabStop = false;
+            this.pbwordCardError.Click += new System.EventHandler(this.pbwordCardError_Click);
             // 
-            // pictureBox5
+            // pbPayCard
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(491, 166);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(86, 63);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
+            this.pbPayCard.Image = ((System.Drawing.Image)(resources.GetObject("pbPayCard.Image")));
+            this.pbPayCard.Location = new System.Drawing.Point(491, 166);
+            this.pbPayCard.Name = "pbPayCard";
+            this.pbPayCard.Size = new System.Drawing.Size(86, 63);
+            this.pbPayCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPayCard.TabIndex = 8;
+            this.pbPayCard.TabStop = false;
+            this.pbPayCard.Click += new System.EventHandler(this.pbPayCard_Click);
             // 
             // pictureBox6
             // 
@@ -363,6 +376,7 @@
             // groupBoxCard
             // 
             this.groupBoxCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBoxCard.Controls.Add(this.pbnaliv);
             this.groupBoxCard.Controls.Add(this.button1);
             this.groupBoxCard.Controls.Add(this.pictureBox9);
             this.groupBoxCard.Location = new System.Drawing.Point(0, 0);
@@ -418,12 +432,80 @@
             this.labelCredit.Size = new System.Drawing.Size(0, 12);
             this.labelCredit.TabIndex = 16;
             // 
+            // pbnaliv
+            // 
+            this.pbnaliv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pbnaliv.Controls.Add(this.gbtakewater);
+            this.pbnaliv.Controls.Add(this.buttonNaliv);
+            this.pbnaliv.Location = new System.Drawing.Point(0, 0);
+            this.pbnaliv.Name = "pbnaliv";
+            this.pbnaliv.Size = new System.Drawing.Size(381, 184);
+            this.pbnaliv.TabIndex = 22;
+            // 
+            // buttonNaliv
+            // 
+            this.buttonNaliv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonNaliv.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.buttonNaliv.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(180)));
+            this.buttonNaliv.ForeColor = System.Drawing.Color.White;
+            this.buttonNaliv.Image = ((System.Drawing.Image)(resources.GetObject("buttonNaliv.Image")));
+            this.buttonNaliv.Location = new System.Drawing.Point(82, 71);
+            this.buttonNaliv.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.buttonNaliv.Name = "buttonNaliv";
+            this.buttonNaliv.Size = new System.Drawing.Size(212, 59);
+            this.buttonNaliv.TabIndex = 22;
+            this.buttonNaliv.UseVisualStyleBackColor = false;
+            this.buttonNaliv.Click += new System.EventHandler(this.buttonNaliv_Click);
+            // 
+            // pb5done
+            // 
+            this.pb5done.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pb5done.Image = ((System.Drawing.Image)(resources.GetObject("pb5done.Image")));
+            this.pb5done.Location = new System.Drawing.Point(220, 534);
+            this.pb5done.Name = "pb5done";
+            this.pb5done.Size = new System.Drawing.Size(139, 217);
+            this.pb5done.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb5done.TabIndex = 17;
+            this.pb5done.TabStop = false;
+            this.pb5done.Click += new System.EventHandler(this.pb5done_Click);
+            // 
+            // gbtakewater
+            // 
+            this.gbtakewater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gbtakewater.Controls.Add(this.pbgoodday);
+            this.gbtakewater.Controls.Add(this.pbtakewater);
+            this.gbtakewater.Location = new System.Drawing.Point(0, 0);
+            this.gbtakewater.Name = "gbtakewater";
+            this.gbtakewater.Size = new System.Drawing.Size(381, 184);
+            this.gbtakewater.TabIndex = 23;
+            // 
+            // pbtakewater
+            // 
+            this.pbtakewater.Image = ((System.Drawing.Image)(resources.GetObject("pbtakewater.Image")));
+            this.pbtakewater.Location = new System.Drawing.Point(72, 71);
+            this.pbtakewater.Name = "pbtakewater";
+            this.pbtakewater.Size = new System.Drawing.Size(234, 65);
+            this.pbtakewater.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbtakewater.TabIndex = 0;
+            this.pbtakewater.TabStop = false;
+            // 
+            // pbgoodday
+            // 
+            this.pbgoodday.Image = ((System.Drawing.Image)(resources.GetObject("pbgoodday.Image")));
+            this.pbgoodday.Location = new System.Drawing.Point(72, 71);
+            this.pbgoodday.Name = "pbgoodday";
+            this.pbgoodday.Size = new System.Drawing.Size(234, 65);
+            this.pbgoodday.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbgoodday.TabIndex = 1;
+            this.pbgoodday.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(581, 763);
+            this.Controls.Add(this.pb5done);
             this.Controls.Add(this.labelCredit);
             this.Controls.Add(this.labelFakeCredit);
             this.Controls.Add(this.groupBoxLitrazh);
@@ -434,9 +516,9 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pbcont);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pbwordCardError);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pbPayCard);
             this.Name = "Form1";
             this.Text = "FRESH VODA";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -444,8 +526,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbcont)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1tab)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbwordCardError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPayCard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -455,6 +537,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBoxCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.pbnaliv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb5done)).EndInit();
+            this.gbtakewater.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbtakewater)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbgoodday)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,8 +554,8 @@
         private System.Windows.Forms.PictureBox pbcont;
         private System.Windows.Forms.PictureBox pb1tab;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pbwordCardError;
+        private System.Windows.Forms.PictureBox pbPayCard;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -490,6 +577,12 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label labelFakeCredit;
         private System.Windows.Forms.Label labelCredit;
+        private System.Windows.Forms.Panel pbnaliv;
+        private System.Windows.Forms.Button buttonNaliv;
+        private System.Windows.Forms.PictureBox pb5done;
+        private System.Windows.Forms.Panel gbtakewater;
+        private System.Windows.Forms.PictureBox pbtakewater;
+        private System.Windows.Forms.PictureBox pbgoodday;
     }
 }
 

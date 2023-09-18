@@ -20,6 +20,7 @@ namespace TRPO_LR_VODA
             InitializeComponent();
             credit = 0;
             litr = 0;
+            pb5done.Visible = false;
             pbbut5.Visible = false;
 
 
@@ -30,6 +31,7 @@ namespace TRPO_LR_VODA
             b19.FlatStyle = FlatStyle.Flat;
             bstaroy.FlatStyle = FlatStyle.Flat;
             bbeztary.FlatStyle = FlatStyle.Flat;
+            buttonNaliv.FlatStyle = FlatStyle.Flat;
 
             b05.FlatAppearance.BorderSize = 1;
             b1.FlatAppearance.BorderSize = 1;
@@ -38,6 +40,7 @@ namespace TRPO_LR_VODA
             b19.FlatAppearance.BorderSize = 1;
             bstaroy.FlatAppearance.BorderSize = 1;
             bbeztary.FlatAppearance.BorderSize = 1;
+            buttonNaliv.FlatAppearance.BorderSize = 1;
 
             b05.FlatAppearance.BorderColor = Color.IndianRed;
             b1.FlatAppearance.BorderColor = Color.IndianRed;
@@ -46,12 +49,17 @@ namespace TRPO_LR_VODA
             b19.FlatAppearance.BorderColor = Color.IndianRed;
             bstaroy.FlatAppearance.BorderColor = Color.IndianRed;
             bbeztary.FlatAppearance.BorderColor = Color.IndianRed;
+            buttonNaliv.FlatAppearance.BorderColor = Color.IndianRed;
 
             groupBoxLitrazh.Visible = false;
             groupBoxTara.Visible = false;
             groupBoxCard.Visible = false;
+            pbnaliv.Visible = false;
             labelFakeCredit.Visible = false;
             labelCredit.Visible = false;
+            gbtakewater.Visible = false;
+            pbgoodday.Visible = false;
+
         }
 
         private void pb1tab_Click(object sender, EventArgs e)
@@ -92,11 +100,7 @@ namespace TRPO_LR_VODA
 
         private void exit_Click(object sender, EventArgs e)
         {
-            groupBoxTara.Visible = false;
-            groupBoxLitrazh.Visible = false;
-            groupBoxCard.Visible = false;
-            labelCredit.Visible = false;
-            pb1tab.Visible = true;
+            Application.Restart();
         }
 
         private void bstaroy_Click(object sender, EventArgs e)
@@ -144,11 +148,51 @@ namespace TRPO_LR_VODA
                     labelFakeCredit.Visible = true;
                     Thread.Sleep(4000);
                     exit_Click(sender, e);
-                    labelFakeCredit.Visible = false;
                     break;
             }
             labelCredit.Visible = true;
             labelCredit.Text = $"Credit = {Convert.ToString(credit)}";
+        }
+
+        private void pbPayCard_Click(object sender, EventArgs e)
+        {
+            if(credit!=0 && litr != 0)
+            {
+                labelCredit.Text = "Успешно";
+                pbnaliv.Visible = true;
+            }
+        }
+
+        private async void buttonNaliv_Click(object sender, EventArgs e)
+        {
+            if (litr == 5)
+            {
+                pbbut5.Visible = true;
+                labelCredit.Text = "";
+                await Task.Delay(5000);
+                pbbut5.Visible = false;
+                pb5done.Visible = true;
+            }
+
+            gbtakewater.Visible = true;
+        }
+
+        private async void pbwordCardError_Click(object sender, EventArgs e)
+        {
+            labelCredit.Text = "";
+            labelFakeCredit.Visible = true;
+            await Task.Delay(3000);
+            exit_Click(sender, e);
+        }
+
+        private async void pb5done_Click(object sender, EventArgs e)
+        {
+            pb5done.Visible = false;
+            pbtakewater.Visible= false;
+            pbgoodday.Visible = true;
+            await Task.Delay(3000);
+            exit_Click(sender, e);
+
         }
     }
 }
