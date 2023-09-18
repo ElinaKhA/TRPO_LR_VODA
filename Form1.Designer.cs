@@ -52,6 +52,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.exit = new System.Windows.Forms.Button();
             this.exit2 = new System.Windows.Forms.Button();
+            this.groupBoxCard = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.labelFakeCredit = new System.Windows.Forms.Label();
+            this.labelCredit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbbut5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcont)).BeginInit();
@@ -66,6 +71,8 @@
             this.groupBoxLitrazh.SuspendLayout();
             this.groupBoxTara.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBoxCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -284,6 +291,7 @@
             this.bstaroy.Size = new System.Drawing.Size(171, 47);
             this.bstaroy.TabIndex = 19;
             this.bstaroy.UseVisualStyleBackColor = false;
+            this.bstaroy.Click += new System.EventHandler(this.bstaroy_Click);
             // 
             // bbeztary
             // 
@@ -298,10 +306,12 @@
             this.bbeztary.Size = new System.Drawing.Size(171, 47);
             this.bbeztary.TabIndex = 20;
             this.bbeztary.UseVisualStyleBackColor = false;
+            this.bbeztary.Click += new System.EventHandler(this.bbeztary_Click);
             // 
             // groupBoxTara
             // 
             this.groupBoxTara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBoxTara.Controls.Add(this.groupBoxCard);
             this.groupBoxTara.Controls.Add(this.exit2);
             this.groupBoxTara.Controls.Add(this.pictureBox2);
             this.groupBoxTara.Controls.Add(this.bstaroy);
@@ -350,12 +360,72 @@
             this.exit2.UseVisualStyleBackColor = false;
             this.exit2.Click += new System.EventHandler(this.exit_Click);
             // 
+            // groupBoxCard
+            // 
+            this.groupBoxCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBoxCard.Controls.Add(this.button1);
+            this.groupBoxCard.Controls.Add(this.pictureBox9);
+            this.groupBoxCard.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxCard.Name = "groupBoxCard";
+            this.groupBoxCard.Size = new System.Drawing.Size(381, 184);
+            this.groupBoxCard.TabIndex = 20;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.button1.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(180)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(351, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 25);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.exit_Click);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(13, 77);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(356, 53);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 19;
+            this.pictureBox9.TabStop = false;
+            // 
+            // labelFakeCredit
+            // 
+            this.labelFakeCredit.AutoSize = true;
+            this.labelFakeCredit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelFakeCredit.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFakeCredit.ForeColor = System.Drawing.Color.GreenYellow;
+            this.labelFakeCredit.Location = new System.Drawing.Point(442, 219);
+            this.labelFakeCredit.Name = "labelFakeCredit";
+            this.labelFakeCredit.Size = new System.Drawing.Size(57, 15);
+            this.labelFakeCredit.TabIndex = 15;
+            this.labelFakeCredit.Text = "Error";
+            // 
+            // labelCredit
+            // 
+            this.labelCredit.AutoSize = true;
+            this.labelCredit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelCredit.Font = new System.Drawing.Font("Lucida Console", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCredit.ForeColor = System.Drawing.Color.GreenYellow;
+            this.labelCredit.Location = new System.Drawing.Point(440, 219);
+            this.labelCredit.Name = "labelCredit";
+            this.labelCredit.Size = new System.Drawing.Size(0, 12);
+            this.labelCredit.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(581, 763);
+            this.Controls.Add(this.labelCredit);
+            this.Controls.Add(this.labelFakeCredit);
             this.Controls.Add(this.groupBoxLitrazh);
             this.Controls.Add(this.pb1tab);
             this.Controls.Add(this.pbbut5);
@@ -383,7 +453,10 @@
             this.groupBoxLitrazh.ResumeLayout(false);
             this.groupBoxTara.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBoxCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -412,6 +485,11 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Button exit2;
+        private System.Windows.Forms.Panel groupBoxCard;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Label labelFakeCredit;
+        private System.Windows.Forms.Label labelCredit;
     }
 }
 
