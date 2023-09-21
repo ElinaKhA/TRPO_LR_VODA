@@ -51,27 +51,28 @@ namespace TRPO_LR_VODA
             bbeztary.FlatAppearance.BorderColor = Color.IndianRed;
             buttonNaliv.FlatAppearance.BorderColor = Color.IndianRed;
 
-            groupBoxLitrazh.Visible = false;
-            groupBoxTara.Visible = false;
-            groupBoxCard.Visible = false;
-            pbnaliv.Visible = false;
+         //   groupBoxLitrazh.Visible = false;
+          //  groupBoxTara.Visible = false;
+          //  groupBoxCard.Visible = false;
+           // pbnaliv.Visible = false;
             labelFakeCredit.Visible = false;
             labelCredit.Visible = false;
-            gbtakewater.Visible = false;
+           // gbtakewater.Visible = false;
             pbgoodday.Visible = false;
-            gbprocess.Visible = false;
+          //  gbprocess.Visible = false;
 
         }
 
         private void pb1tab_Click(object sender, EventArgs e)
         {
             pb1tab.Visible = false;
-            groupBoxLitrazh.Visible = true;
+         //   groupBoxLitrazh.Visible = true;
         }
 
         private void b05_Click(object sender, EventArgs e)
         {
-            groupBoxTara.Visible = true;
+            groupBoxLitrazh.Visible = false;
+            // groupBoxTara.Visible = true;
             litr = 0.5;
         }
 
@@ -83,7 +84,8 @@ namespace TRPO_LR_VODA
 
         private void b5_Click(object sender, EventArgs e)
         {
-            groupBoxTara.Visible = true;
+            groupBoxLitrazh.Visible = false;
+         //   groupBoxTara.Visible = true;
             litr = 5;
         }
 
@@ -106,7 +108,8 @@ namespace TRPO_LR_VODA
 
         private void bstaroy_Click(object sender, EventArgs e)
         {
-            groupBoxCard.Visible = true;
+            groupBoxTara.Visible = false;
+            //  groupBoxCard.Visible = true;
             switch (litr)
             {
                 case 1:
@@ -160,13 +163,14 @@ namespace TRPO_LR_VODA
             if(credit!=0 && litr != 0)
             {
                 labelCredit.Text = "Успешно";
-                pbnaliv.Visible = true;
+                groupBoxCard.Visible = false;
+                // pbnaliv.Visible = true;
             }
         }
 
         private async void buttonNaliv_Click(object sender, EventArgs e)
         {
-           // pbnaliv.Visible = false;
+            pbnaliv.Visible = false;
             if (litr == 5)
             {
              //   gbprocess.Visible = true;
@@ -176,8 +180,8 @@ namespace TRPO_LR_VODA
                 pbbut5.Visible = false;
                 pb5done.Visible = true;
             }
-
-            gbtakewater.Visible = true;
+            gbprocess.Visible = false;
+            //gbtakewater.Visible = true;
         }
 
         private async void pbwordCardError_Click(object sender, EventArgs e)

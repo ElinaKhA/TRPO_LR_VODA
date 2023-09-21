@@ -94,11 +94,11 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(80, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(59, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 57);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(319, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -129,7 +129,7 @@
             // 
             this.pb1tab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pb1tab.Image = ((System.Drawing.Image)(resources.GetObject("pb1tab.Image")));
-            this.pb1tab.Location = new System.Drawing.Point(19, 154);
+            this.pb1tab.Location = new System.Drawing.Point(0, 0);
             this.pb1tab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pb1tab.Name = "pb1tab";
             this.pb1tab.Size = new System.Drawing.Size(286, 150);
@@ -298,7 +298,7 @@
             // groupBoxLitrazh
             // 
             this.groupBoxLitrazh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBoxLitrazh.Controls.Add(this.groupBoxTara);
+            this.groupBoxLitrazh.Controls.Add(this.pb1tab);
             this.groupBoxLitrazh.Controls.Add(this.pblitr2);
             this.groupBoxLitrazh.Controls.Add(this.exit);
             this.groupBoxLitrazh.Controls.Add(this.b19);
@@ -306,7 +306,7 @@
             this.groupBoxLitrazh.Controls.Add(this.b05);
             this.groupBoxLitrazh.Controls.Add(this.b15);
             this.groupBoxLitrazh.Controls.Add(this.b1);
-            this.groupBoxLitrazh.Location = new System.Drawing.Point(19, 154);
+            this.groupBoxLitrazh.Location = new System.Drawing.Point(20, 155);
             this.groupBoxLitrazh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxLitrazh.Name = "groupBoxLitrazh";
             this.groupBoxLitrazh.Size = new System.Drawing.Size(286, 150);
@@ -315,7 +315,6 @@
             // groupBoxTara
             // 
             this.groupBoxTara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBoxTara.Controls.Add(this.groupBoxCard);
             this.groupBoxTara.Controls.Add(this.exit2);
             this.groupBoxTara.Controls.Add(this.pictureBox2);
             this.groupBoxTara.Controls.Add(this.bstaroy);
@@ -329,7 +328,7 @@
             // groupBoxCard
             // 
             this.groupBoxCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBoxCard.Controls.Add(this.pbnaliv);
+            this.groupBoxCard.Controls.Add(this.groupBoxTara);
             this.groupBoxCard.Controls.Add(this.button1);
             this.groupBoxCard.Controls.Add(this.pictureBox9);
             this.groupBoxCard.Location = new System.Drawing.Point(0, 0);
@@ -341,6 +340,7 @@
             // pbnaliv
             // 
             this.pbnaliv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pbnaliv.Controls.Add(this.groupBoxCard);
             this.pbnaliv.Controls.Add(this.buttonNaliv);
             this.pbnaliv.Location = new System.Drawing.Point(0, 0);
             this.pbnaliv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -467,7 +467,7 @@
             this.gbtakewater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.gbtakewater.Controls.Add(this.pbgoodday);
             this.gbtakewater.Controls.Add(this.pbtakewater);
-            this.gbtakewater.Location = new System.Drawing.Point(19, 154);
+            this.gbtakewater.Location = new System.Drawing.Point(20, 155);
             this.gbtakewater.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbtakewater.Name = "gbtakewater";
             this.gbtakewater.Size = new System.Drawing.Size(286, 150);
@@ -536,8 +536,9 @@
             // gbprocess
             // 
             this.gbprocess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gbprocess.Controls.Add(this.pbnaliv);
             this.gbprocess.Controls.Add(this.pictureBox4);
-            this.gbprocess.Location = new System.Drawing.Point(19, 154);
+            this.gbprocess.Location = new System.Drawing.Point(20, 155);
             this.gbprocess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbprocess.Name = "gbprocess";
             this.gbprocess.Size = new System.Drawing.Size(286, 150);
@@ -559,23 +560,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(436, 620);
-            this.Controls.Add(this.gbtakewater);
+            this.ClientSize = new System.Drawing.Size(441, 620);
+            this.Controls.Add(this.groupBoxLitrazh);
             this.Controls.Add(this.gbprocess);
+            this.Controls.Add(this.gbtakewater);
             this.Controls.Add(this.pb5done);
             this.Controls.Add(this.labelCredit);
             this.Controls.Add(this.labelFakeCredit);
-            this.Controls.Add(this.groupBoxLitrazh);
-            this.Controls.Add(this.pb1tab);
             this.Controls.Add(this.pbbut5);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pbcont);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pbwordCardError);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbPayCard);
+            this.Controls.Add(this.pbcont);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "FRESH VODA";
