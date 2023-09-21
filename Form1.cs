@@ -59,6 +59,7 @@ namespace TRPO_LR_VODA
             labelCredit.Visible = false;
             gbtakewater.Visible = false;
             pbgoodday.Visible = false;
+            gbprocess.Visible = false;
 
         }
 
@@ -165,8 +166,10 @@ namespace TRPO_LR_VODA
 
         private async void buttonNaliv_Click(object sender, EventArgs e)
         {
+           // pbnaliv.Visible = false;
             if (litr == 5)
             {
+             //   gbprocess.Visible = true;
                 pbbut5.Visible = true;
                 labelCredit.Text = "";
                 await Task.Delay(5000);
