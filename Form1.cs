@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.IO;
+using System.Media;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NAudio;
+using NAudio.Wave;
 
 namespace TRPO_LR_VODA
 {
@@ -15,6 +14,9 @@ namespace TRPO_LR_VODA
     {
         int credit;
         double litr;
+        IWavePlayer waveOutDevice = new WaveOut();
+        IWavePlayer waveOutDeviceS = new WaveOut();
+        IWavePlayer waveOutDeviceF = new WaveOut();
         public Form1()
         {
             InitializeComponent();
@@ -22,8 +24,6 @@ namespace TRPO_LR_VODA
             litr = 0;
             pb5done.Visible = false;
             pbbut5.Visible = false;
-
-
             b05.FlatStyle = FlatStyle.Flat;
             b1.FlatStyle = FlatStyle.Flat;
             b15.FlatStyle = FlatStyle.Flat;
@@ -32,7 +32,6 @@ namespace TRPO_LR_VODA
             bstaroy.FlatStyle = FlatStyle.Flat;
             bbeztary.FlatStyle = FlatStyle.Flat;
             buttonNaliv.FlatStyle = FlatStyle.Flat;
-
             b05.FlatAppearance.BorderSize = 1;
             b1.FlatAppearance.BorderSize = 1;
             b15.FlatAppearance.BorderSize = 1;
@@ -41,7 +40,6 @@ namespace TRPO_LR_VODA
             bstaroy.FlatAppearance.BorderSize = 1;
             bbeztary.FlatAppearance.BorderSize = 1;
             buttonNaliv.FlatAppearance.BorderSize = 1;
-
             b05.FlatAppearance.BorderColor = Color.IndianRed;
             b1.FlatAppearance.BorderColor = Color.IndianRed;
             b5.FlatAppearance.BorderColor = Color.IndianRed;
@@ -50,55 +48,54 @@ namespace TRPO_LR_VODA
             bstaroy.FlatAppearance.BorderColor = Color.IndianRed;
             bbeztary.FlatAppearance.BorderColor = Color.IndianRed;
             buttonNaliv.FlatAppearance.BorderColor = Color.IndianRed;
-
-         //   groupBoxLitrazh.Visible = false;
-          //  groupBoxTara.Visible = false;
-          //  groupBoxCard.Visible = false;
-           // pbnaliv.Visible = false;
             labelFakeCredit.Visible = false;
             labelCredit.Visible = false;
-           // gbtakewater.Visible = false;
             pbgoodday.Visible = false;
-          //  gbprocess.Visible = false;
-
         }
 
         private void pb1tab_Click(object sender, EventArgs e)
         {
             pb1tab.Visible = false;
-         //   groupBoxLitrazh.Visible = true;
         }
 
         private void b05_Click(object sender, EventArgs e)
         {
             groupBoxLitrazh.Visible = false;
-            // groupBoxTara.Visible = true;
             litr = 0.5;
+            pbbut5.Image = Image.FromFile("D:\\Downloads\\10\\10\\05.gif");
+            pb5done.Image = Image.FromFile("D:\\Downloads\\10\\10\\05d.png");
         }
 
         private void b15_Click(object sender, EventArgs e)
         {
-            groupBoxTara.Visible = true;
+            groupBoxLitrazh.Visible = false;
             litr = 1.5;
+            pbbut5.Image = Image.FromFile("D:\\Downloads\\10\\10\\15.gif");
+            pb5done.Image = Image.FromFile("D:\\Downloads\\10\\10\\15d.png");
         }
 
         private void b5_Click(object sender, EventArgs e)
         {
             groupBoxLitrazh.Visible = false;
-         //   groupBoxTara.Visible = true;
             litr = 5;
+            pbbut5.Image = Image.FromFile("D:\\Downloads\\10\\10\\5.gif");
+            pb5done.Image = Image.FromFile("D:\\Downloads\\10\\10\\5d.png");
         }
 
         private void b1_Click(object sender, EventArgs e)
         {
-            groupBoxTara.Visible = true;
+            groupBoxLitrazh.Visible = false;
             litr = 1;
+            pbbut5.Image = Image.FromFile("D:\\Downloads\\10\\10\\1.gif");
+            pb5done.Image = Image.FromFile("D:\\Downloads\\10\\10\\1d.png");
         }
 
         private void b19_Click(object sender, EventArgs e)
         {
-            groupBoxTara.Visible = true;
+            groupBoxLitrazh.Visible = false;
             litr = 19;
+            pbbut5.Image = Image.FromFile("D:\\Downloads\\10\\10\\19.gif");
+            pb5done.Image = Image.FromFile("D:\\Downloads\\10\\10\\19d.png");
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -109,7 +106,6 @@ namespace TRPO_LR_VODA
         private void bstaroy_Click(object sender, EventArgs e)
         {
             groupBoxTara.Visible = false;
-            //  groupBoxCard.Visible = true;
             switch (litr)
             {
                 case 1:
@@ -135,7 +131,7 @@ namespace TRPO_LR_VODA
 
         private void bbeztary_Click(object sender, EventArgs e)
         {
-            groupBoxCard.Visible = true;
+            groupBoxTara.Visible = false;
             switch (litr)
             {
                 case 1:
@@ -158,37 +154,51 @@ namespace TRPO_LR_VODA
             labelCredit.Text = $"Credit = {Convert.ToString(credit)}";
         }
 
-        private void pbPayCard_Click(object sender, EventArgs e)
+        private async void pbPayCard_Click(object sender, EventArgs e)
         {
             if(credit!=0 && litr != 0)
             {
+                AudioFileReader audioFileReaderS = new AudioFileReader("D:\\Downloads\\10\\10\\paysuccess.mp3");
+                waveOutDeviceS.Init(audioFileReaderS);
+                waveOutDeviceS.Play();
+                await Task.Delay(2000);
                 labelCredit.Text = "Успешно";
+                waveOutDeviceS.Stop();
+                audioFileReaderS.Dispose();
+                waveOutDeviceS.Dispose();
                 groupBoxCard.Visible = false;
-                // pbnaliv.Visible = true;
             }
         }
 
         private async void buttonNaliv_Click(object sender, EventArgs e)
         {
+            AudioFileReader audioFileReaderN = new AudioFileReader("D:\\Downloads\\10\\10\\sound.mp3");
+            waveOutDevice.Init(audioFileReaderN);
+            waveOutDevice.Play();
             pbnaliv.Visible = false;
-            if (litr == 5)
-            {
-             //   gbprocess.Visible = true;
-                pbbut5.Visible = true;
-                labelCredit.Text = "";
-                await Task.Delay(5000);
-                pbbut5.Visible = false;
-                pb5done.Visible = true;
-            }
+            pictureBox4.Image = Image.FromFile("D:\\Downloads\\10\\10\\process.gif");
+            pbbut5.Visible = true;
+            labelCredit.Text = "";
+            await Task.Delay(5000);
+            waveOutDevice.Stop();
+            audioFileReaderN.Dispose();
+            waveOutDevice.Dispose();
+            pbbut5.Visible = false;
+            pb5done.Visible = true;
             gbprocess.Visible = false;
-            //gbtakewater.Visible = true;
         }
 
         private async void pbwordCardError_Click(object sender, EventArgs e)
         {
+            AudioFileReader audioFileReaderF = new AudioFileReader("D:\\Downloads\\10\\10\\payfail.mp3");
+            waveOutDeviceF.Init(audioFileReaderF);
+            waveOutDeviceF.Play();
             labelCredit.Text = "";
             labelFakeCredit.Visible = true;
-            await Task.Delay(3000);
+            await Task.Delay(2000);
+            waveOutDeviceF.Stop();
+            audioFileReaderF.Dispose();
+            waveOutDeviceF.Dispose();
             exit_Click(sender, e);
         }
 
@@ -199,7 +209,6 @@ namespace TRPO_LR_VODA
             pbgoodday.Visible = true;
             await Task.Delay(3000);
             exit_Click(sender, e);
-
         }
     }
 }

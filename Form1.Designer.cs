@@ -105,7 +105,6 @@
             // pbbut5
             // 
             this.pbbut5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pbbut5.Image = ((System.Drawing.Image)(resources.GetObject("pbbut5.Image")));
             this.pbbut5.Location = new System.Drawing.Point(165, 431);
             this.pbbut5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbbut5.Name = "pbbut5";
@@ -523,8 +522,7 @@
             // pb5done
             // 
             this.pb5done.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pb5done.Image = ((System.Drawing.Image)(resources.GetObject("pb5done.Image")));
-            this.pb5done.Location = new System.Drawing.Point(165, 434);
+            this.pb5done.Location = new System.Drawing.Point(165, 431);
             this.pb5done.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pb5done.Name = "pb5done";
             this.pb5done.Size = new System.Drawing.Size(104, 176);
