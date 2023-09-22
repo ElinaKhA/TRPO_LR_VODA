@@ -14,9 +14,6 @@ namespace TRPO_LR_VODA
     {
         int credit;
         double litr;
-        IWavePlayer waveOutDevice = new WaveOut();
-        IWavePlayer waveOutDeviceS = new WaveOut();
-        IWavePlayer waveOutDeviceF = new WaveOut();
         public Form1()
         {
             InitializeComponent();
@@ -51,6 +48,7 @@ namespace TRPO_LR_VODA
             labelFakeCredit.Visible = false;
             labelCredit.Visible = false;
             pbgoodday.Visible = false;
+            pbwater.Visible = false;
         }
 
         private void pb1tab_Click(object sender, EventArgs e)
@@ -158,6 +156,7 @@ namespace TRPO_LR_VODA
         {
             if(credit!=0 && litr != 0)
             {
+                IWavePlayer waveOutDeviceS = new WaveOut();
                 AudioFileReader audioFileReaderS = new AudioFileReader("D:\\Downloads\\10\\10\\paysuccess.mp3");
                 waveOutDeviceS.Init(audioFileReaderS);
                 waveOutDeviceS.Play();
@@ -173,16 +172,20 @@ namespace TRPO_LR_VODA
         private async void buttonNaliv_Click(object sender, EventArgs e)
         {
             pbnaliv.Visible = false;
-            AudioFileReader audioFileReaderN = new AudioFileReader("D:\\Downloads\\10\\10\\sound.mp3");
-            waveOutDevice.Init(audioFileReaderN);
-            waveOutDevice.Play();
             pictureBox4.Image = Image.FromFile("D:\\Downloads\\10\\10\\process.gif");
+            IWavePlayer waveOutDevic = new WaveOut();
+            AudioFileReader audioFileReaderN = new AudioFileReader("D:\\Downloads\\10\\10\\sound.mp3");
+            waveOutDevic.Init(audioFileReaderN);
+            waveOutDevic.Play();
+
             pbbut5.Visible = true;
+            pbwater.Visible = true;
             labelCredit.Text = "";
             await Task.Delay(5000);
-            waveOutDevice.Stop();
+            pbwater.Visible = false;
+            waveOutDevic.Stop();
             audioFileReaderN.Dispose();
-            waveOutDevice.Dispose();
+            waveOutDevic.Dispose();
             pbbut5.Visible = false;
             pb5done.Visible = true;
             gbprocess.Visible = false;
@@ -190,6 +193,7 @@ namespace TRPO_LR_VODA
 
         private async void pbwordCardError_Click(object sender, EventArgs e)
         {
+            IWavePlayer waveOutDeviceF = new WaveOut();
             AudioFileReader audioFileReaderF = new AudioFileReader("D:\\Downloads\\10\\10\\payfail.mp3");
             waveOutDeviceF.Init(audioFileReaderF);
             waveOutDeviceF.Play();
