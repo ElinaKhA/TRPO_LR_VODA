@@ -161,7 +161,7 @@ namespace TRPO_LR_VODA
                 AudioFileReader audioFileReaderS = new AudioFileReader("D:\\Downloads\\10\\10\\paysuccess.mp3");
                 waveOutDeviceS.Init(audioFileReaderS);
                 waveOutDeviceS.Play();
-                await Task.Delay(2000);
+                await Task.Delay(1000);
                 labelCredit.Text = "Успешно";
                 waveOutDeviceS.Stop();
                 audioFileReaderS.Dispose();
@@ -172,10 +172,10 @@ namespace TRPO_LR_VODA
 
         private async void buttonNaliv_Click(object sender, EventArgs e)
         {
+            pbnaliv.Visible = false;
             AudioFileReader audioFileReaderN = new AudioFileReader("D:\\Downloads\\10\\10\\sound.mp3");
             waveOutDevice.Init(audioFileReaderN);
             waveOutDevice.Play();
-            pbnaliv.Visible = false;
             pictureBox4.Image = Image.FromFile("D:\\Downloads\\10\\10\\process.gif");
             pbbut5.Visible = true;
             labelCredit.Text = "";
